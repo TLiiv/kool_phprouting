@@ -1,15 +1,14 @@
 <?php  
-    // var_dump($_SERVER);
-    switch($_SERVER['REQUEST_URI']){
-        case '/':
-            include 'views/index.php';
-            break;
-            case '/page1':
-                include 'views/page1.php';
-                break;
-            case '/page2':
-                include 'views/page2.php';
-                break;
-            default:
-                echo 404;
-    }
+spl_autoload_register(function ($class) {
+    $class = substr($class, 4); // Assuming the class name starts with "App\"
+    require_once "src/$class.php";
+});
+use App\Controllers\PublicController;
+$router = new App\Router();
+$db = new App\DB();
+$controller = new PublicController();
+
+var_dump($router);
+var_dump($db);
+var_dump($controller);
+

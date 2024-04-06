@@ -1,32 +1,17 @@
 <?php include('partials/header.php'); ?>
     
 <?php
-    $name = 'Tarmo';
+    
     $fruits = ["apple","banana","cherry","pear"]
 ?>
 <h1>Hello <?=$name ?></h1>
-    <ul>
-        <!-- segasem versioon loopimiseks -->
-        <?php
-        foreach($fruits as $fruit){ ?>
-             <li><?=$fruit ?></li>
-       <?php } ?>
-    </ul>
-            <!-- puhtam versioon loopimiseks -->
-    <ul>
-        <?php 
-        foreach($fruits as $fruit): ?>
-        <?php if($fruit != "apple") : ?>
-            <li><?=$fruit ?></li>
-            <?php else: ?>
-                <li>
-                    <i>
-                        <?=$fruit?>
-                    </i>
-                </li>
-                <?php endif;?>
-        <?php endforeach ?>
-    </ul>
+   <form>
+    <input type="text" name="name" placeholder="Kasutajanimi" id="name" />
+    <input type="password" name="password" placeholder="Parool" id="password" />
+    <input type="number" name="age" placeholder="Vanus" id="age" />
+    <input type="submit"/>
+    
+   </form>
 <?php 
 echo "Hello world!"; ?>
 <?php include('partials/footer.php'); ?>

@@ -16,7 +16,9 @@ class AuthController{
         try{
             $conn = new PDO('sqlite:db.sqlite');
             $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+            $email =$_POST('email');
+            $pass = password_hash($_POST['password'],PASSWORD_BCRYPT);
+            $sql = "INSERT INTO users (email, password);
             VALUES ('John', 'Doe', 'john@example.com')";
 
         }catch(PDOException $e){

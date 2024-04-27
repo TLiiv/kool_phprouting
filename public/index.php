@@ -1,8 +1,9 @@
 <?php  
-spl_autoload_register(function ($class) {
-    $class = substr($class, 4); // Assuming the class name starts with "App\"
-    require_once "src/$class.php";
-});
+// spl_autoload_register(function ($class) {
+//     $class = substr($class, 4); // Assuming the class name starts with "App\"
+//     require_once "src/$class.php";
+// }); vendor autoload selle asemel
+require __DIR__ . '/../vendor/autoload.php';
 
 use App\Router;
 require 'routes.php';

@@ -9,9 +9,9 @@ class PublicController{
         //     $name="nameless";
         // }
        session_start(['cookie_httponly'=>true]);
-       var_dump($_SESSION);
-       $name = htmlspecialchars($_GET['name']) ?? 'Nameless';
-        $fruits = ["apple","banana","cherry","pear"];
+       dump($_SERVER);
+        $name = htmlspecialchars($_GET['name']) ?? 'Nameless';
+    //     $fruits = ["apple","banana","cherry","pear"];
         include 'views/index.php';
     }
 
